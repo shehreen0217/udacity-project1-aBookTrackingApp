@@ -69,15 +69,17 @@ const SearchBook = ({ setUpdate }) => {
 
                   {shelf.length === 0 &&
                     (b.imageLinks && b.authors ? (
-                      <Book
-                        key={b.id}
-                        title={b.title}
-                        author={b.authors}
-                        shelf={"none"}
-                        image={b.imageLinks}
-                        id={b.id}
-                        onUpdate={setUpdate}
-                      />
+                      <>
+                        <Book
+                          key={b.id}
+                          title={b.title}
+                          author={b.authors}
+                          shelf={"none"}
+                          image={b.imageLinks}
+                          id={b.id}
+                          onUpdate={setUpdate}
+                        />
+                      </>
                     ) : null)}
                 </li>
               );

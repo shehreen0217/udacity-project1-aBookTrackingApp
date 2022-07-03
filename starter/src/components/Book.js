@@ -15,7 +15,7 @@ const Book = ({ title, author, shelf, image, id, onUpdate }) => {
       };
       updating();
     }
-  }, [updateShelf]);
+  }, [updateShelf, id]);
 
   return (
     <div className="book">
@@ -34,14 +34,13 @@ const Book = ({ title, author, shelf, image, id, onUpdate }) => {
               value={shelf}
               onChange={(e) => setUpdateShelf(e.target.value)}
             >
-              <option value="none" disabled>
+              <option value="MoveTo" disabled>
                 Move to...
               </option>
               <option value="none"> None </option>
               <option value="currentlyReading">Currently Reading</option>
               <option value="wantToRead">Want to Read</option>
               <option value="read">Read</option>
-              <option value="none">None</option>
             </select>
           )}
           {shelf === "none" && (
@@ -49,14 +48,13 @@ const Book = ({ title, author, shelf, image, id, onUpdate }) => {
               value="none"
               onChange={(e) => setUpdateShelf(e.target.value)}
             >
-              <option value="none" disabled>
+              <option value="MoveTo" disabled>
                 Move to...
               </option>
               <option value="none"> None </option>
               <option value="currentlyReading">Currently Reading</option>
               <option value="wantToRead">Want to Read</option>
               <option value="read">Read</option>
-              <option value="none">None</option>
             </select>
           )}
         </div>
