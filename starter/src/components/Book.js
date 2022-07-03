@@ -11,11 +11,11 @@ const Book = ({ title, author, shelf, image, id, onUpdate }) => {
         const res = await BookAPI.update({ id: id }, updateShelf);
         const gett = await BookAPI.getAll();
         onUpdate(gett);
-        console.lof(res);
+        console.log(res);
       };
       updating();
     }
-  }, [updateShelf, id]);
+  }, [updateShelf, id, onUpdate]);
 
   return (
     <div className="book">
